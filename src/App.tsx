@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { ROUTE_PATH } from './constants/router';
+import TravelListpage from './components/screen/TravelListPage';
+import TravelDetailPage from './components/screen/TravelDetailPage/indet';
+import TravelWritePage from './components/screen/TravelWritePage';
+import TravelUpdatePage from './components/screen/TravelUpdatePage';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  render() {
+    return(
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route exact path={ROUTE_PATH.LIST_PAGE} component={TravelListpage}/>
+            <Route exact path={ROUTE_PATH.DETAIL_PAGE} component={TravelDetailPage}/>
+            <Route exact path={ROUTE_PATH.WRITE_PAGE} component={TravelWritePage}/>
+            <Route exact path={ROUTE_PATH.UPDATE_PAGE} component={TravelUpdatePage}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

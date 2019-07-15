@@ -14,39 +14,99 @@
     },
     {
       "id": 2,
-      "city": "Bangkok",
-      "country": "Thailand",
+      "city": "Osaka",
+      "country": "Japan",
       "continent": "Asia",
-      "trip_average": 17,
-      "housing_type": "Apartment",
+      "trip_average": 16,
+      "housing_type": "GeustHouse",
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg"
+      "image_url": "https://photos.smugmug.com/Osaka/Osaka-Categories/i-J9MFjBv/0/XL/Osaka_Districts-XL.jpg"
     },
     {
       "id": 3,
-      "city": "Bangkok",
-      "country": "Thailand",
+      "city": "Seoul",
+      "country": "Korea",
       "continent": "Asia",
-      "trip_average": 17,
+      "trip_average": 1,
       "housing_type": "Apartment",
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg"
+      "image_url": "https://img.theculturetrip.com/768x432/wp-content/uploads/2013/07/lotte-world-tower-1791802_1280.jpg"
     },
     {
       "id": 4,
-      "city": "Bangkok",
-      "country": "Thailand",
-      "continent": "Asia",
-      "trip_average": 17,
+      "city": "Newyork",
+      "country": "USA",
+      "continent": "American",
+      "trip_average": 21,
+      "housing_type": "Hotel",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "https://media.timeout.com/images/103444978/image.jpg"
+    },
+    {
+      "id": 5,
+      "city": "LasVegas",
+      "country": "USA",
+      "continent": "American",
+      "trip_average": 21,
       "housing_type": "Apartment",
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg"
+      "image_url": "http://res.cloudinary.com/simpleview/image/upload/v1497480003/clients/lasvegas/strip_b86ddbea-3add-4995-b449-ac85d700b027.jpg"
+    },
+    {
+      "id": 6,
+      "city": "Roma",
+      "country": "Italy",
+      "continent": "Europe",
+      "trip_average": 21,
+      "housing_type": "Apartment",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "http://image.chosun.com/sitedata/image/201502/15/2015021500802_0.jpg"
+    },
+    {
+      "id": 7,
+      "city": "Berlin",
+      "country": "Germany",
+      "continent": "Europe",
+      "trip_average": 21,
+      "housing_type": "Hotel",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "http://img.hani.co.kr/section-image/interactive/photo/berlin/a02.jpg"
+    },
+    {
+      "id": 8,
+      "city": "Morocco",
+      "country": "USA",
+      "continent": "Africa",
+      "trip_average": 21,
+      "housing_type": "American",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "https://img-wishbeen.akamaized.net/plan/1456910568088_20572315924_cdbea2ca8f_k.jpg"
+    },
+    {
+      "id": 9,
+      "city": "Wellington",
+      "country": "NewZealand",
+      "continent": "Austria",
+      "trip_average": 21,
+      "housing_type": "GeustHouse",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "http://cfile205.uf.daum.net/image/2724B44558DA192016509B"
     }
   ]
 }

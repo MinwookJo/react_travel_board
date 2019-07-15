@@ -1,0 +1,52 @@
+{
+  "travel": [
+    {
+      "id": 1,
+      "city": "Bangkok",
+      "country": "Thailand",
+      "continent": "Asia",
+      "trip_average": 17,
+      "housing_type": "Apartment",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg"
+    },
+    {
+      "id": 2,
+      "city": "Bangkok",
+      "country": "Thailand",
+      "continent": "Asia",
+      "trip_average": 17,
+      "housing_type": "Apartment",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg"
+    },
+    {
+      "id": 3,
+      "city": "Bangkok",
+      "country": "Thailand",
+      "continent": "Asia",
+      "trip_average": 17,
+      "housing_type": "Apartment",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg"
+    },
+    {
+      "id": 4,
+      "city": "Bangkok",
+      "country": "Thailand",
+      "continent": "Asia",
+      "trip_average": 17,
+      "housing_type": "Apartment",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg"
+    }
+  ]
+}

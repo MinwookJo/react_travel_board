@@ -10,7 +10,8 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg"
+      "image_url": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/thailand-1200x819.jpg",
+      "rate": 4
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "https://photos.smugmug.com/Osaka/Osaka-Categories/i-J9MFjBv/0/XL/Osaka_Districts-XL.jpg"
+      "image_url": "https://photos.smugmug.com/Osaka/Osaka-Categories/i-J9MFjBv/0/XL/Osaka_Districts-XL.jpg",
+      "rate": 4
     },
     {
       "id": 3,
@@ -34,7 +36,8 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "https://img.theculturetrip.com/768x432/wp-content/uploads/2013/07/lotte-world-tower-1791802_1280.jpg"
+      "image_url": "https://img.theculturetrip.com/768x432/wp-content/uploads/2013/07/lotte-world-tower-1791802_1280.jpg",
+      "rate": 4
     },
     {
       "id": 4,
@@ -46,7 +49,8 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "https://media.timeout.com/images/103444978/image.jpg"
+      "image_url": "https://media.timeout.com/images/103444978/image.jpg",
+      "rate": 3
     },
     {
       "id": 5,
@@ -58,7 +62,8 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "http://res.cloudinary.com/simpleview/image/upload/v1497480003/clients/lasvegas/strip_b86ddbea-3add-4995-b449-ac85d700b027.jpg"
+      "image_url": "http://res.cloudinary.com/simpleview/image/upload/v1497480003/clients/lasvegas/strip_b86ddbea-3add-4995-b449-ac85d700b027.jpg",
+      "rate": 3
     },
     {
       "id": 6,
@@ -70,7 +75,8 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "http://image.chosun.com/sitedata/image/201502/15/2015021500802_0.jpg"
+      "image_url": "http://image.chosun.com/sitedata/image/201502/15/2015021500802_0.jpg",
+      "rate": 3
     },
     {
       "id": 7,
@@ -82,7 +88,8 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "http://img.hani.co.kr/section-image/interactive/photo/berlin/a02.jpg"
+      "image_url": "http://img.hani.co.kr/section-image/interactive/photo/berlin/a02.jpg",
+      "rate": 2
     },
     {
       "id": 8,
@@ -94,7 +101,8 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "https://img-wishbeen.akamaized.net/plan/1456910568088_20572315924_cdbea2ca8f_k.jpg"
+      "image_url": "https://img-wishbeen.akamaized.net/plan/1456910568088_20572315924_cdbea2ca8f_k.jpg",
+      "rate": 5
     },
     {
       "id": 9,
@@ -106,7 +114,47 @@
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
-      "image_url": "http://cfile205.uf.daum.net/image/2724B44558DA192016509B"
+      "image_url": "http://cfile205.uf.daum.net/image/2724B44558DA192016509B",
+      "rate": 1
+    },
+    {
+      "id": 10,
+      "city": "Daegu",
+      "country": "Korea",
+      "continent": "Asia",
+      "trip_average": 21,
+      "housing_type": "GeustHouse",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "http://img.hani.co.kr/imgdb/resize/2018/0606/152816115439_20180606.JPG",
+      "rate": 1
+    },
+    {
+      "id": 11,
+      "city": "Busan",
+      "country": "Korea",
+      "continent": "Asia",
+      "trip_average": 21,
+      "housing_type": "GeustHouse",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "https://content.r9cdn.net/rimg/dimg/30/6e/8bdba93d-city-41830-165865708c5.jpg?crop=true&width=1000&height=600&xhint=2891&yhint=1725",
+      "rate": 1
+    },
+    {
+      "id": 12,
+      "city": "Daejeon",
+      "country": "Korea",
+      "continent": "Asia",
+      "trip_average": 21,
+      "housing_type": "GeustHouse",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "http://www.englishspectrum.com/wp-content/uploads/2015/02/6936804443_4383bafc7f_b.jpg",
+      "rate": 1
     }
   ]
 }

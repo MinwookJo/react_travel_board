@@ -1,3 +1,4 @@
+// 라우터 상수
 export const ROUTE_PATH = {
     LIST_PAGE: '/',
     DETAIL_PAGE: '/:travelId',

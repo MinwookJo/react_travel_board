@@ -1,19 +1,15 @@
 import * as React from "react";
 import { withRouter, RouteComponentProps } from "react-router";
-import { ROUTE_PATH } from "../../../constants/router";
+import TravelList from "../../organism/TravelList";
 
-type Props = RouteComponentProps & {
-
-}
-
-class TravelListpage extends React.Component<Props> {
+class TravelListpage extends React.Component {
     render() {
         return(
-            <div onClick={() => {this.props.history.push(ROUTE_PATH.DETAIL_PAGE.replace(':travelId', '1'))}}>
-                Travel List page
+            <div style={{backgroundColor: '#DDD', flex: 1}}>
+                <TravelList/>
             </div>
         )
     }
 }
 
-export default withRouter(TravelListpage);
+export default TravelListpage;

@@ -9,7 +9,7 @@ import TravelListItem from "../TravelListItem";
 import styled from "styled-components";
 import { withRouter, RouteComponentProps } from "react-router";
 import { ROUTE_PATH } from "../../../constants/router";
-import NoDataItem from "../NoDataItem";
+import NoDataItem from "../../molecule/NoDataItem";
 
 type Props = {
     travels: Travel[],

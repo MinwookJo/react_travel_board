@@ -6,6 +6,7 @@ type Props = {
     onChange: (value: string) => void;
 }
 
+// 텍스트 인풋 컴포넌트
 class InputField extends React.Component<Props> {
     render() {
         const {placeholder, onChange} = this.props;

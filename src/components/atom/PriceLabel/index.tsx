@@ -5,6 +5,7 @@ type Props = {
     price: number
 }
 
+// 가격 표시 라벨
 const PriceLabel: React.FC<Props> = (props: Props) => {
     const {price} = props;
     return(

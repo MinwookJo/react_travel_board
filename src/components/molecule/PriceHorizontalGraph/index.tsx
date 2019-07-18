@@ -5,6 +5,7 @@ type Props = {
     rate: number
 }
 
+// 여행점수 그래프
 class PriceHorizontalGraph extends React.Component<Props> {
     render() {
         const {rate} = this.props;

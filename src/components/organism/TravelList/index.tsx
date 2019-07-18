@@ -18,6 +18,7 @@ type Props = {
     fetchTravelList(travels: Travel[]): FetchTravelListAction,
 } & RouteComponentProps
 
+// 여행정보 리스트
 class TravelList extends React.Component<Props> {
     
     componentDidMount() {

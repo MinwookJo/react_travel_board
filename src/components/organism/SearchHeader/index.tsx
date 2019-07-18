@@ -7,13 +7,29 @@ import {changeSerachCity, ChangeSearchCity} from "../../../store/action/Search/i
 import { connect } from "react-redux";
 
 type Props = {
-    city: string
-    changeSerachCity(city: string): ChangeSearchCity
+    city: string,
+    changeSerachCity(city: string): ChangeSearchCity,
+    searchVisible: boolean
 }
 
+// 헤더, 검색
 class SearchHeader extends React.Component<Props> {
+    private renderSearchHeader() {
+        const {searchVisible, changeSerachCity} = this.props;
+        if(searchVisible) {
+            return (
+                <SearchHeaderPart>
+                    <div style={{width: '90%', display: 'flex', flexDirection: 'row'}}>
+                        <InputField onChange={(v: string) => changeSerachCity(v)} placeholder={'Serach City'}/>
+                    </div>
+                </SearchHeaderPart>
+            )
+        } else {
+            return
+        }
+    }
+
     render() {
-        const {changeSerachCity} = this.props;
         return(
             <SearchHeaderBackgroundWrapper>
                 <DefaultHeaderPart>
@@ -29,11 +45,7 @@ class SearchHeader extends React.Component<Props> {
                         </DefaultHeaderContent>
                     </div>
                 </DefaultHeaderPart>
-                <SearchHeaderPart>
-                    <div style={{width: '90%', display: 'flex', flexDirection: 'row'}}>
-                        <InputField onChange={(v: string) => changeSerachCity(v)} placeholder={'Serach City'}/>
-                    </div>
-                </SearchHeaderPart>
+                {this.renderSearchHeader()}
             </SearchHeaderBackgroundWrapper>
         );
     }

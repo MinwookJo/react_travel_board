@@ -9,6 +9,7 @@ type Props = {
     onClick: () => void;
 }
 
+// 여행점보 리스트에 아이템
 class TravelListItem extends React.Component<Props> {
     render() {
         const {city, country, monthly_price_average, rate} = this.props.travel;

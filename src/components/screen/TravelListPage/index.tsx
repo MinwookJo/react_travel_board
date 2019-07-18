@@ -6,7 +6,7 @@ class TravelListpage extends React.Component {
     render() {
         return(
             <div style={{backgroundColor: '#DDD', flex: 1}}>
-                <SearchHeader/>
+                <SearchHeader searchVisible={true}/>
                 <TravelList/>
             </div>
         )

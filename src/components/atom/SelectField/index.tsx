@@ -7,6 +7,7 @@ type Props = {
     textColor?: string;
     options: string[];
     optionColor?: string;
+    value?: string;
 }
 
 // 텍스트 인풋 컴포넌트
@@ -28,9 +29,10 @@ class SelectField extends React.Component<Props> {
     }
 
     render() {
-        const {onChange, width, textColor} = this.props;
+        const {onChange, width, textColor, value} = this.props;
         return(
             <Select
+            value={value}
             onChange={(e: React.FormEvent<HTMLSelectElement>) => onChange(e.currentTarget.value)}
             width={!!width ? width : '416'}
             textColor={!!textColor ? textColor : '#FFF'}>

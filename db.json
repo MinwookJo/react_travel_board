@@ -168,6 +168,19 @@
       "image_url": "https://content.r9cdn.net/rimg/dimg/30/6e/8bdba93d-city-41830-165865708c5.jpg?crop=true&width=1000&height=600&xhint=2891&yhint=1725",
       "rate": 1,
       "id": 13
+    },
+    {
+      "city": "Harbin3",
+      "country": "China",
+      "continent": "Asia",
+      "trip_average": 21,
+      "housing_type": "GeustHouse",
+      "housing_price": 21,
+      "expenses_price": 329,
+      "monthly_price_average": 350,
+      "image_url": "https://content.r9cdn.net/rimg/dimg/30/6e/8bdba93d-city-41830-165865708c5.jpg?crop=true&width=1000&height=600&xhint=2891&yhint=1725",
+      "rate": 1,
+      "id": 18
     }
   ]
 }

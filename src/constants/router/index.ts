@@ -3,5 +3,5 @@ export const ROUTE_PATH = {
     LIST_PAGE: '/',
     DETAIL_PAGE: '/:travelId',
     ADD_PAGE: '/write/post',
-    UPDATE_PAGE: '/write/update/:travelId'
+    UPDATE_PAGE: '/write/put/:travelId'
 }

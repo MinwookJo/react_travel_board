@@ -7,14 +7,16 @@ type Props = {
     width?: string;
     textColor?: string;
     type?: string;
+    value?: string;
 }
 
 // 텍스트 인풋 컴포넌트
 class InputField extends React.Component<Props> {
     render() {
-        const {placeholder, onChange, width, textColor, type} = this.props;
+        const {placeholder, onChange, width, textColor, type, value} = this.props;
         return(
             <Input placeholder={placeholder} 
+            value={value}
             onChange={(e: React.FormEvent<HTMLInputElement>) => onChange(e.currentTarget.value)}
             width={!!width ? width : '416'}
             textColor={!!textColor ? textColor : '#FFF'}

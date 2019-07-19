@@ -1,6 +1,5 @@
 import { Travel } from "../../../model/Travel";
 import { FETCH_TRAVEL_LIST, INSERT_TRAVEL } from "./type";
-import TravelAddForm from "../../../components/screen/TravelAddPage/components/TravelAddForm";
 
 export type TravelActionType =  FetchTravelListAction | InsertTravelAction ;
 
@@ -17,9 +16,9 @@ export const fetchTravelList = (travels: Travel[]): FetchTravelListAction => ({
 // Insert
 export interface InsertTravelAction {
     type: typeof INSERT_TRAVEL,
-    payload: TravelAddForm
+    payload: Travel
 }
-export const insertTravel = (form: TravelAddForm): InsertTravelAction => ({
+export const insertTravel = (form: Travel): InsertTravelAction => ({
     type: INSERT_TRAVEL,
     payload: form
 })

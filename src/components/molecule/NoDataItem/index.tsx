@@ -9,6 +9,7 @@ const NoDataItem: React.FC = () => {
     );
 }
 
+// style
 const NodataItemText = styled.div`
     color: #AAA;
     font-size: 14px;

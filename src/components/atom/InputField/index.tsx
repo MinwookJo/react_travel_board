@@ -23,6 +23,7 @@ class InputField extends React.Component<Props> {
     }
 }
 
+// style
 const Input = styled.input`
     width: ${(props:{width?: string, textColor?: string}) => `${props.width}px`};
     height: 38px;

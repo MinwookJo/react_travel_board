@@ -1,6 +1,6 @@
 import { Travel } from "../../../model/Travel";
 import { TravelActionType } from "../../action/Travel";
-import { FETCH_TRAVEL_LIST } from "../../action/Travel/type";
+import { FETCH_TRAVEL_LIST, INSERT_TRAVEL } from "../../action/Travel/type";
 
 export type TravelState = {
     travels: Travel[]
@@ -19,6 +19,13 @@ const travelReducer = (state = initialState, action: TravelActionType): TravelSt
                 travels: action.payload.map(
                     (travel: Travel) => ({...travel})
                 )
+            }
+        case INSERT_TRAVEL:
+            const temp = state.travels;
+            temp.push(action.payload);
+            return {
+                ...state,
+                travels: temp
             }
         default: 
             return state

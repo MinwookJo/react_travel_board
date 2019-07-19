@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import InputField from "../../../../atom/InputField";
-import SelectField from "../../../../atom/SelectField";
-import { HOUSE_TYPE } from "../../../../../constants/travel";
-import { required, isURL } from "../../../../../utils/validator";
-import CardModal from "../../../../molecule/CardModal";
+import { HOUSE_TYPE } from "../../../constants/travel";
+import { required } from "../../../utils/validator";
+import InputField from "../../atom/InputField";
+import SelectField from "../../atom/SelectField";
+import { TravelAddFormType } from "../../../model/Travel";
 
 type Props = {
-    onSubmit: (value: TravelAddFormType) => void;
+    onComplete: (value: TravelAddFormType) => void;
 }
 
 type State = {
+    // field 마다 에러, 폼 정보를 state로 가짐
     error: {
         city: string,
         country: string,
@@ -24,19 +25,6 @@ type State = {
         rate: string
     }
 } & TravelAddFormType
-// form 모양
-export type TravelAddFormType = {
-    city: string,
-    country: string,
-    continent: string,
-    trip_average: number,
-    housing_type: HOUSE_TYPE,
-    housing_price: number,
-    expenses_price: number,
-    monthly_price_average: number,
-    image_url: string,
-    rate: number
-}
 
 // state 초기값
 const initialState: State = {
@@ -44,7 +32,7 @@ const initialState: State = {
     country: '',
     continent: '',
     trip_average: 0,
-    housing_type: HOUSE_TYPE.NONE,
+    housing_type: HOUSE_TYPE.GUEST_HOUSE,
     housing_price: 0,
     expenses_price: 0,
     monthly_price_average: 0,
@@ -101,22 +89,22 @@ class TravelAddForm extends React.Component<Props, State> {
                 error.expenses_price = 'Invalid expenses_price';
                 throw new Error(error.expenses_price);
             }
-            if(!required(image_url) || !isURL(image_url)) {
+            if(!required(image_url)) {
                 error.image_url = 'Invalid image_url';
                 throw new Error(error.image_url);
             }
-            if(!required(rate)) {
+            if(!required(rate) || rate > 5 || rate < 0) {
                 error.rate = 'Invalid rate';
                 throw new Error(error.rate);
             }
+            !!onComplete && onComplete();
         } catch(error) {
             alert(error);
         }
-        !!onComplete && onComplete();
     }
 
     render() {
-        const {onSubmit} = this.props;
+        const {onComplete} = this.props;
         const {city, continent, country, trip_average,
              housing_price, housing_type, expenses_price,
              image_url, rate} = this.state;
@@ -143,12 +131,9 @@ class TravelAddForm extends React.Component<Props, State> {
                                 break;
                             case HOUSE_TYPE.APARTMENT:
                                 this.setState({housing_type: HOUSE_TYPE.APARTMENT});
-                                break;
-                            case HOUSE_TYPE.GUEST_HOUSE:
-                                this.setState({housing_type: HOUSE_TYPE.GUEST_HOUSE});
-                                break    
+                                break;   
                             default :
-                                this.setState({housing_type: HOUSE_TYPE.NONE});
+                                this.setState({housing_type: HOUSE_TYPE.GUEST_HOUSE});
                                 break;
                         }
                     }} options={[HOUSE_TYPE.GUEST_HOUSE, HOUSE_TYPE.APARTMENT, HOUSE_TYPE.HOTEL]}/>
@@ -184,10 +169,9 @@ class TravelAddForm extends React.Component<Props, State> {
                             image_url: image_url,
                             rate: rate,
                         }
-                        this.onValidator(() => onSubmit(value));
+                        this.onValidator(() => onComplete(value));
                     }}>Add</SubmitButton>
                 </div>
-                <CardModal message={'확인해주세요'} visible={false} onClick={() => console.log('MJ')}/>
             </TravelPostForm>
         );
     }

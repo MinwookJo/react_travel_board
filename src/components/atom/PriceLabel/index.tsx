@@ -15,6 +15,7 @@ const PriceLabel: React.FC<Props> = (props: Props) => {
     );
 }
 
+// style
 const PriceTextLabel = styled.div`
     display: flex;
     justify-content: center;

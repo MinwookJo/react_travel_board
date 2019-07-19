@@ -10,7 +10,8 @@ import styled from "styled-components";
 import { withRouter, RouteComponentProps } from "react-router";
 import { ROUTE_PATH } from "../../../constants/router";
 import NoDataItem from "../../molecule/NoDataItem";
-import { fetchTravel } from "../../../api/Travel";
+import { fetchTravelCall } from "../../../api/Travel";
+import LoadingImage from "../../molecule/LoadingImage";
 
 type Props = {
     travels: Travel[],
@@ -19,14 +20,31 @@ type Props = {
     fetchTravelList(travels: Travel[]): FetchTravelListAction,
 } & RouteComponentProps
 
+type State = {
+    loadingVisible: boolean
+}
+
+const initialState: State = {
+    loadingVisible: false
+}
+
 // 여행정보 리스트
-class TravelList extends React.Component<Props> {
+class TravelList extends React.Component<Props, State> {
+    state = initialState;
+
     componentWillMount() {
-        fetchTravel().then(
+        this.setState({loadingVisible: true});
+        fetchTravelCall().then(
             (travels: Travel[]) => {      
                 this.props.fetchTravelList(travels);
             }
-        )
+        ).catch(
+            (err) => {
+                console.log(err);
+            }
+        ).finally(() => {
+            this.setState({loadingVisible: false});
+        })
     }
 
     private renderTravelItems = () => {
@@ -61,9 +79,11 @@ class TravelList extends React.Component<Props> {
     }
 
     render() {
+        const {loadingVisible} = this.state;
         return(
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                 {this.renderTravelItems()}
+                <LoadingImage visible={loadingVisible}/>
             </div>
         );
     }

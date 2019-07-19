@@ -40,6 +40,7 @@ class SelectField extends React.Component<Props> {
     }
 }
 
+// style
 const Select = styled.select`
     width: ${(props:{width?: string, textColor?: string}) => `${props.width}px`};
     height: 38px;

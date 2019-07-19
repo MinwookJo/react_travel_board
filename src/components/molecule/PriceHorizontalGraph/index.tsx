@@ -20,6 +20,7 @@ class PriceHorizontalGraph extends React.Component<Props> {
     }
 }
 
+// style
 const PriceGraphFillPart = styled.div`
     width: ${(props:{percente: number}) => `${props.percente}%`};
     height: 5px;

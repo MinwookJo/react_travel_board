@@ -10,19 +10,23 @@ import styled from "styled-components";
 import { withRouter, RouteComponentProps } from "react-router";
 import { ROUTE_PATH } from "../../../constants/router";
 import NoDataItem from "../../molecule/NoDataItem";
+import { fetchTravel } from "../../../api/Travel";
 
 type Props = {
     travels: Travel[],
     city: string,
     changeSerachCity(city: string): ChangeSearchCity,
-    fetchTravelList(): FetchTravelListAction,
+    fetchTravelList(travels: Travel[]): FetchTravelListAction,
 } & RouteComponentProps
 
 // 여행정보 리스트
 class TravelList extends React.Component<Props> {
-    
-    componentDidMount() {
-        this.props.fetchTravelList();
+    componentWillMount() {
+        fetchTravel().then(
+            (travels: Travel[]) => {      
+                this.props.fetchTravelList(travels);
+            }
+        )
     }
 
     private renderTravelItems = () => {

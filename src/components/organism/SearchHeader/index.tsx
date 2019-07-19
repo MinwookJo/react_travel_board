@@ -14,8 +14,10 @@ type Props = {
     searchVisible: boolean
 } & RouteComponentProps
 
-// 헤더, 검색
+// 헤더, 검색 상단 바 searchVisible로 검색창 표시 선택
 class SearchHeader extends React.Component<Props> {
+    
+    // searchVisible에 따라 검색 바를 렌더링하는 함수
     private renderSearchHeader() {
         const {searchVisible, changeSerachCity, history} = this.props;
         if(searchVisible) {

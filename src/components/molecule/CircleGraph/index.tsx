@@ -7,6 +7,7 @@ type Props = {
     subtitle: string
 }
 
+// static 데이터를 표시하는 도넛차트
 const CircleGraph: React.FC<Props> = (props: Props) => {
     const {percent, subtitle} = props;
     return(
@@ -19,7 +20,7 @@ const CircleGraph: React.FC<Props> = (props: Props) => {
     );
 }
 
-
+// style
 const TravelDetailCircleGraph = styled.div`
     width: 54px;
     height: 54px;

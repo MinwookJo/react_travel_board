@@ -7,6 +7,7 @@ type Props = {
     contentColor?: string
 }
 
+// 머릿말과 내용으로 구성된 라벨 
 const TitleLabel: React.FC<Props> = (props: Props) => {
     const {title, content, contentColor} = props;
     return(
@@ -21,6 +22,7 @@ const TitleLabel: React.FC<Props> = (props: Props) => {
     );
 }
 
+// style
 const TitlelabelWrapper = styled.div`
     display: flex;
     flex-direction: column;

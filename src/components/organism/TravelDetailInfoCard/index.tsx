@@ -19,6 +19,7 @@ type Props = {
     monthly_price_average: number
 } & RouteComponentProps
 
+// 여행 상세정보 중 이미지외 정보를 보여주는 카드
 class TravelDetailInfoCard extends React.Component<Props> {
     render() {
         const {id, city, continent, country, trip_average, 

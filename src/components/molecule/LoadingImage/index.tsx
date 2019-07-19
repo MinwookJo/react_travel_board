@@ -6,6 +6,7 @@ type Props = {
     visible: boolean
 }
 
+// 비동기 실행시 사용되는 로딩
 class LoadingImage extends React.Component<Props> {
     render() {
         const { visible } = this.props;
@@ -24,6 +25,8 @@ class LoadingImage extends React.Component<Props> {
     }
 }
 
+
+// style
 const LoadingWrapper = styled.div`
     z-index: 100;
     position: fixed;
@@ -38,6 +41,7 @@ const LoadingWrapper = styled.div`
     height: 100vh;
 `;
 
+// animation
 const rotateKeyFrame = keyframes`
     0% {
         transform: rotate(0deg);

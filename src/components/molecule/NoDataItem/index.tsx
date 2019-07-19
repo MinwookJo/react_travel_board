@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 // 데이터가 없을 때 표시하는 텍스트
 const NoDataItem: React.FC = () => {
     return(

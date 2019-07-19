@@ -13,6 +13,7 @@ type Props = {
 // 텍스트 인풋 컴포넌트
 class SelectField extends React.Component<Props> {
 
+    // option props를 렌더링
     private renderOptions() {
         const {options, optionColor} = this.props;
         const optionItmes: ReactNode[] = [];

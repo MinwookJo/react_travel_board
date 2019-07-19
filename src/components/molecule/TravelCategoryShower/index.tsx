@@ -7,6 +7,7 @@ type Props = {
     city: string
 }
 
+// 카테고리를 보여주는 컴포넌트
 const TravelCategoryShower: React.FC<Props> = (props: Props) => {
     const {continent, city, country} = props;
     return(

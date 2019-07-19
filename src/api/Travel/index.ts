@@ -27,3 +27,14 @@ export const insertTravelCall = async (form: TravelAddFormType) => {
         }
       )
 }
+
+export const deleteTravelCall = async(id: number) => {
+    return axios.delete(API_PATH + 'travel/' + id)
+      .then(
+        (result: AxiosResponse) => {
+          if(!result.hasOwnProperty('data')) {
+            throw new Error('Travel Delete: Fail');
+          }
+        }
+      )
+}

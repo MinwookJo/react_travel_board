@@ -63,7 +63,8 @@ class TravelList extends React.Component<Props, State> {
                 travelItems.push(
                     <TravelListItem travel={item} 
                     key={'TravelListItem' + index}
-                    onClick={() => {history.push(ROUTE_PATH.DETAIL_PAGE.replace(':travelId', item.id.toString()))}}/>
+                    onClick={() => {history.push(ROUTE_PATH.DETAIL_PAGE.replace(':travelId', item.id.toString()))}}
+                    toggleLoading={(flag: boolean) => this.setState({loadingVisible: flag})}/>
                 );
             }
         )

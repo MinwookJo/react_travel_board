@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ROUTE_PATH } from './constants/router';
 import TravelListpage from './components/screen/TravelListPage';
 import TravelDetailPage from './components/screen/TravelDetailPage/indet';
-import TravelWritePage from './components/screen/TravelWritePage';
+import TravelAddPage from './components/screen/TravelAddPage';
 import TravelUpdatePage from './components/screen/TravelUpdatePage';
 
 class App extends React.Component{
@@ -14,7 +14,7 @@ class App extends React.Component{
           <Switch>
             <Route exact path={ROUTE_PATH.LIST_PAGE} component={TravelListpage}/>
             <Route exact path={ROUTE_PATH.DETAIL_PAGE} component={TravelDetailPage}/>
-            <Route exact path={ROUTE_PATH.WRITE_PAGE} component={TravelWritePage}/>
+            <Route exact path={ROUTE_PATH.ADD_PAGE} component={TravelAddPage}/>
             <Route exact path={ROUTE_PATH.UPDATE_PAGE} component={TravelUpdatePage}/>
           </Switch>
         </div>

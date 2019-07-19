@@ -1,6 +1,6 @@
 import { Travel } from "../../../model/Travel";
 import { TravelActionType } from "../../action/Travel";
-import { FETCH_TRAVEL_LIST_SUCCESS } from "../../action/Travel/type";
+import { FETCH_TRAVEL_LIST_SUCCESS, FETCH_TRAVEL_LIST_FAIL } from "../../action/Travel/type";
 
 export type TravelState = {
     travels: Travel[]
@@ -20,6 +20,8 @@ const travelReducer = (state = initialState, action: TravelActionType): TravelSt
                     (travel: Travel) => ({...travel})
                 )
             }
+        case FETCH_TRAVEL_LIST_FAIL:
+            return state
         default: 
             return state
     }

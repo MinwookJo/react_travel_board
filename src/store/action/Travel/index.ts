@@ -1,11 +1,12 @@
 import { Travel } from "../../../model/Travel";
-import { FETCH_TRAVEL_LIST, FETCH_TRAVEL_LIST_SUCCESS } from "./type";
+import { FETCH_TRAVEL_LIST, FETCH_TRAVEL_LIST_SUCCESS, INSERT_TRAVEL, FETCH_TRAVEL_LIST_FAIL } from "./type";
+import TravelAddForm from "../../../components/screen/TravelAddPage/components/TravelAddForm";
 
-export type TravelActionType =  FetchTravelListSuccess ;
+export type TravelActionType =  FetchTravelListSuccess | FetchTravelListFail ;
 
+// Fetch
 export interface FetchTravelListAction {
-    type: typeof FETCH_TRAVEL_LIST,
-    payload: Travel[]
+    type: typeof FETCH_TRAVEL_LIST
 }
 
 export interface FetchTravelListSuccess {
@@ -13,9 +14,18 @@ export interface FetchTravelListSuccess {
     payload: Travel[]
 }
 
-export const fetchTravelList = (travels: Travel[]): FetchTravelListAction => ({
-    type: FETCH_TRAVEL_LIST,
-    payload: travels
+export interface FetchTravelListFail {
+    type: typeof FETCH_TRAVEL_LIST_FAIL,
+}
+
+// Insert
+export interface InsertTravelAction {
+    type: typeof INSERT_TRAVEL,
+    payload: TravelAddForm
+}
+
+export const fetchTravelList = (): FetchTravelListAction => ({
+    type: FETCH_TRAVEL_LIST
 })
 
 export const fetchTravelListSuccess = (travels: Travel[]): FetchTravelListSuccess => ({

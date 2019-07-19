@@ -5,22 +5,25 @@ import { RootState } from "../../../store/reducer";
 import { Dispatch, bindActionCreators } from "redux";
 import {changeSerachCity, ChangeSearchCity} from "../../../store/action/Search/index"
 import { connect } from "react-redux";
+import { withRouter, RouteComponentProps } from "react-router";
+import { ROUTE_PATH } from "../../../constants/router";
 
 type Props = {
     city: string,
     changeSerachCity(city: string): ChangeSearchCity,
     searchVisible: boolean
-}
+} & RouteComponentProps
 
 // 헤더, 검색
 class SearchHeader extends React.Component<Props> {
     private renderSearchHeader() {
-        const {searchVisible, changeSerachCity} = this.props;
+        const {searchVisible, changeSerachCity, history} = this.props;
         if(searchVisible) {
             return (
                 <SearchHeaderPart>
-                    <div style={{width: '90%', display: 'flex', flexDirection: 'row'}}>
+                    <div style={{width: '90%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                         <InputField onChange={(v: string) => changeSerachCity(v)} placeholder={'Serach City'}/>
+                        <AddTravelButton onClick={() => history.push(ROUTE_PATH.ADD_PAGE)}>Add</AddTravelButton>
                     </div>
                 </SearchHeaderPart>
             )
@@ -34,7 +37,7 @@ class SearchHeader extends React.Component<Props> {
             <SearchHeaderBackgroundWrapper>
                 <DefaultHeaderPart>
                     <div style={{width: '90%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                        <DefaultHeaderContent>
+                        <DefaultHeaderContent onClick={() => this.props.history.push(ROUTE_PATH.LIST_PAGE)}>
                             <DefaultHeaderIcon/>
                             <DefaultHeaderTitle>Venture Cost</DefaultHeaderTitle>
                         </DefaultHeaderContent>
@@ -74,6 +77,7 @@ const DefaultHeaderContent = styled.div`
     flex-direction: row;
     align-items: center;
     height: 55;
+    cursor: pointer;
 `;
 
 const DefaultHeaderIcon = styled.div`
@@ -110,10 +114,21 @@ const SearchHeaderPart = styled.div`
     justify-content: center;
 `;
 
+const AddTravelButton = styled.button`
+    width: 66px;
+    height: 32px;
+    background-color: #FFF;
+    color: #3BC97B;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer
+`;
+
 // redux
 const mapStateToProps = (state: RootState) => ({
     city: state.searchReducer.city
 });
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ changeSerachCity }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SearchHeader));

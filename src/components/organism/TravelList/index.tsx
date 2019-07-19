@@ -15,14 +15,14 @@ type Props = {
     travels: Travel[],
     city: string,
     changeSerachCity(city: string): ChangeSearchCity,
-    fetchTravelList(travels: Travel[]): FetchTravelListAction,
+    fetchTravelList(): FetchTravelListAction,
 } & RouteComponentProps
 
 // 여행정보 리스트
 class TravelList extends React.Component<Props> {
     
     componentDidMount() {
-        this.props.fetchTravelList([]);
+        this.props.fetchTravelList();
     }
 
     private renderTravelItems = () => {
@@ -48,7 +48,7 @@ class TravelList extends React.Component<Props> {
         // 아이템이 없으면 텍스트 렌더링
         if(travelItems.length < 1) {
             travelItems.push(
-                <NoDataItem/>
+                <NoDataItem key={'empty'}/>
             );
         }
         return (

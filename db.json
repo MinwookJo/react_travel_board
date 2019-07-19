@@ -97,7 +97,7 @@
       "country": "USA",
       "continent": "Africa",
       "trip_average": 21,
-      "housing_type": "American",
+      "housing_type": "Hotel",
       "housing_price": 438,
       "expenses_price": 329,
       "monthly_price_average": 766,
@@ -155,6 +155,19 @@
       "monthly_price_average": 766,
       "image_url": "http://www.englishspectrum.com/wp-content/uploads/2015/02/6936804443_4383bafc7f_b.jpg",
       "rate": 1
+    },
+    {
+      "city": "Harbin",
+      "country": "China",
+      "continent": "Asia",
+      "trip_average": 21,
+      "housing_type": "GeustHouse",
+      "housing_price": 438,
+      "expenses_price": 329,
+      "monthly_price_average": 766,
+      "image_url": "https://content.r9cdn.net/rimg/dimg/30/6e/8bdba93d-city-41830-165865708c5.jpg?crop=true&width=1000&height=600&xhint=2891&yhint=1725",
+      "rate": 1,
+      "id": 13
     }
   ]
 }

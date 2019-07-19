@@ -4,23 +4,30 @@ import styled from "styled-components";
 type Props = {
     placeholder?: string;
     onChange: (value: string) => void;
+    width?: string;
+    textColor?: string;
+    type?: string;
 }
 
 // 텍스트 인풋 컴포넌트
 class InputField extends React.Component<Props> {
     render() {
-        const {placeholder, onChange} = this.props;
+        const {placeholder, onChange, width, textColor, type} = this.props;
         return(
-            <Input placeholder={placeholder} onChange={(e: React.FormEvent<HTMLInputElement>) => onChange(e.currentTarget.value)}/>
+            <Input placeholder={placeholder} 
+            onChange={(e: React.FormEvent<HTMLInputElement>) => onChange(e.currentTarget.value)}
+            width={!!width ? width : '416'}
+            textColor={!!textColor ? textColor : '#FFF'}
+            type={type || 'text'}/>
         );
     }
 }
 
 const Input = styled.input`
-    width: 416px;
+    width: ${(props:{width?: string, textColor?: string}) => `${props.width}px`};
     height: 38px;
-    padding-left: 12px;
-    color: #FFF;
+    padding-left: 12px
+    color: ${(props:{textColor?: string}) => `${props.textColor}`};;
     background-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0px 0 0 1px rgba(255, 255, 255, 0.55);
     outline: none;

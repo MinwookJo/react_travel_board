@@ -1,15 +1,15 @@
 import { Travel } from "../../../model/Travel";
-import { FETCH_TRAVEL_LIST, INSERT_TRAVEL } from "./type";
+import { SAVE_TRAVEL_LIST, INSERT_TRAVEL, DELETE_TRAVEL, UPDATE_TRAVEL } from "./type";
 
-export type TravelActionType =  FetchTravelListAction | InsertTravelAction ;
+export type TravelActionType =  SaveTravelListAction | InsertTravelAction | DeleteTravelAction | UpdateTravelAction ;
 
 // Fetch
-export interface FetchTravelListAction {
-    type: typeof FETCH_TRAVEL_LIST
+export interface SaveTravelListAction {
+    type: typeof SAVE_TRAVEL_LIST
     payload: Travel[]
 }
-export const fetchTravelList = (travels: Travel[]): FetchTravelListAction => ({
-    type: FETCH_TRAVEL_LIST,
+export const saveTravelList = (travels: Travel[]): SaveTravelListAction => ({
+    type: SAVE_TRAVEL_LIST,
     payload: travels
 })
 
@@ -21,4 +21,26 @@ export interface InsertTravelAction {
 export const insertTravel = (form: Travel): InsertTravelAction => ({
     type: INSERT_TRAVEL,
     payload: form
+})
+
+// Delete
+export interface DeleteTravelAction {
+    type: typeof DELETE_TRAVEL,
+    payload: number
+}
+
+export const deleteTravel = (id: number): DeleteTravelAction => ({
+    type: DELETE_TRAVEL,
+    payload: id
+})
+
+// Update
+export interface UpdateTravelAction {
+    type: typeof UPDATE_TRAVEL,
+    payload: Travel
+}
+
+export const updateTravel = (travel: Travel): UpdateTravelAction => ({
+    type: UPDATE_TRAVEL,
+    payload: travel
 })

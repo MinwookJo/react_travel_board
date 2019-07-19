@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Travel } from "../../../model/Travel";
-import { fetchTravelList, FetchTravelListAction } from "../../../store/action/Travel";
+import { saveTravelList, SaveTravelListAction } from "../../../store/action/Travel";
 import { changeSerachCity, ChangeSearchCity } from "../../../store/action/Search";
 import { connect } from "react-redux";
 import { RootState } from "../../../store/reducer";
@@ -17,7 +17,7 @@ type Props = {
     travels: Travel[],
     city: string,
     changeSerachCity(city: string): ChangeSearchCity,
-    fetchTravelList(travels: Travel[]): FetchTravelListAction,
+    saveTravelList(travels: Travel[]): SaveTravelListAction,
 } & RouteComponentProps
 
 type State = {
@@ -36,7 +36,7 @@ class TravelList extends React.Component<Props, State> {
         this.setState({loadingVisible: true});
         fetchTravelCall().then(
             (travels: Travel[]) => {      
-                this.props.fetchTravelList(travels);
+                this.props.saveTravelList(travels);
             }
         ).catch(
             (err) => {
@@ -107,6 +107,6 @@ const mapStateToProps = (state: RootState) => ({
     travels: state.travelReducer.travels,
     city: state.searchReducer.city
 });
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ fetchTravelList, changeSerachCity }, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ saveTravelList, changeSerachCity }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TravelList))

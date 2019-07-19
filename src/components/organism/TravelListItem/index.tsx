@@ -4,14 +4,14 @@ import { Travel } from "../../../model/Travel";
 import PriceLabel from "../../atom/PriceLabel";
 import PriceHorizontalGraph from "../../molecule/PriceHorizontalGraph";
 import { Dispatch, bindActionCreators } from "redux";
-import { fetchTravelList, FetchTravelListAction } from "../../../store/action/Travel";
+import { deleteTravel, DeleteTravelAction } from "../../../store/action/Travel";
 import { connect } from "react-redux";
-import { deleteTravelCall, fetchTravelCall } from "../../../api/Travel";
+import { deleteTravelCall } from "../../../api/Travel";
 
 type Props = {
     travel: Travel;
     onClick: () => void;
-    fetchTravelList(travels: Travel[]): FetchTravelListAction,
+    deleteTravel(id: number): DeleteTravelAction,
     toggleLoading: (flag: boolean) => void;
 }
 
@@ -19,33 +19,21 @@ type Props = {
 class TravelListItem extends React.Component<Props> {
 
     private onClickDeleteButton() {
-        this.deleteTravel();
-    }
-
-    // 여행을 지우고 다시 받아오는 함수
-    deleteTravel = async() => {
         const {id} = this.props.travel;
-        const {toggleLoading} = this.props;
-        await deleteTravelCall(id).then().catch(
-            (err) => {
-                alert('Fail to Delete');
-                console.log(err);
-
-            }
-        );
-        
+        const {toggleLoading, deleteTravel} = this.props;
         toggleLoading(true);
-        await fetchTravelCall().then(
-            (travels: Travel[]) => {      
-                this.props.fetchTravelList(travels);
+        deleteTravelCall(id).then(
+            () => {
+                deleteTravel(id);
             }
         ).catch(
             (err) => {
+                alert('Fail to Delete');
                 console.log(err);
             }
         ).finally(() => {
             toggleLoading(false);
-        })
+        });
     }
 
     render() {
@@ -123,6 +111,6 @@ const CountryText = styled.div`
 `;
 
 // redux
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ fetchTravelList }, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ deleteTravel }, dispatch);
 
 export default connect(null, mapDispatchToProps)(TravelListItem);

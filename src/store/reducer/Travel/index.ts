@@ -1,6 +1,6 @@
 import { Travel } from "../../../model/Travel";
 import { TravelActionType } from "../../action/Travel";
-import { FETCH_TRAVEL_LIST, INSERT_TRAVEL } from "../../action/Travel/type";
+import { SAVE_TRAVEL_LIST, INSERT_TRAVEL, DELETE_TRAVEL, UPDATE_TRAVEL } from "../../action/Travel/type";
 
 export type TravelState = {
     travels: Travel[]
@@ -13,19 +13,42 @@ const initialState: TravelState = {
 const travelReducer = (state = initialState, action: TravelActionType): TravelState => {
     // TravelActionType 액션 마다 행동을 지정
     switch(action.type) {
-        case FETCH_TRAVEL_LIST:
+        case SAVE_TRAVEL_LIST:
             return {
                 ...state,
-                travels: action.payload.map(
-                    (travel: Travel) => ({...travel})
-                )
+                travels: action.payload
             }
         case INSERT_TRAVEL:
-            const temp = state.travels;
-            temp.push(action.payload);
+            const insertTemp = state.travels;
+            insertTemp.push(action.payload);
             return {
                 ...state,
-                travels: temp
+                travels: insertTemp
+            }
+        case DELETE_TRAVEL:
+            const deleteTemp = state.travels.filter(
+                (element: Travel) => {
+                    return element.id !== action.payload
+                }
+            );
+            return {
+                ...state,
+                travels: deleteTemp
+            }
+        case UPDATE_TRAVEL:
+            const updateTemp: Travel[] = [];
+            state.travels.forEach(
+                (element: Travel) => {
+                    if(element.id === action.payload.id) {
+                        updateTemp.push({...action.payload});
+                    } else {
+                        updateTemp.push(element);
+                    }
+                }
+            )
+            return {
+                ...state,
+                travels: updateTemp
             }
         default: 
             return state

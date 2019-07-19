@@ -38,3 +38,15 @@ export const deleteTravelCall = async(id: number) => {
         }
       )
 }
+
+export const fetchTravelDetailCall = async(id: number) => {
+    return axios.get(API_PATH + 'travel/' + id)
+    .then(
+      (result: AxiosResponse): Travel => {
+        if(!result.data.hasOwnProperty('id')) {
+          throw new Error('Travel Detail Fetch: Fail');
+        }
+        return result.data;
+      }
+    )
+}

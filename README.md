@@ -1,4 +1,4 @@
-# React js와 json-server로 여행정보를 get,post,put,delete 하는 웹어플리케이션
+# React js와 json-server로 여행 정보 CURD를 구현한 웹어플리케이션
 atomic디자인, redux, axios, typescript, styled-component 사용
 
 1. 컴포넌트 구조
